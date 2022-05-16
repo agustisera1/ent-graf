@@ -1,0 +1,59 @@
+En cada caso, explicar las diferencias entre los segmentos de código y sus visualizaciones
+
+3-A
+---
+
+1) Hipervinculo que enlaza con página "http://www.google.com.ar"
+2) Hipervinculo que enlaza con página "http://www.google.com.ar" pero abre en una nueva ventana
+3) Hipervínculo que además de redirigir a google, indica que:
+- El lenguaje nativo del documento enlazado es Español
+- El documento enlazado es del tipo texto u html
+- El conjunto de caracteres que el documento opera es utf-8
+- El recurso al que el enlace dirige es un documento de ayuda
+4) Hipervínculo que no enlaza con otro documento. Dirige al usuario hacia el inicio del documento.
+E) Hipervínculo que enlaza con el elemento cuyo ID dentro del DOM es "arriba".
+5) Hipervínculo que no enlaza con ningun otro, pero sirve para posicionar ubicar el enlace anterior. 
+
+3-B
+
+1) Parrafo, contiene la "imagen1" y con su descripción alternativa. Seguida de un hipervínculo que redirige a google.
+2) A diferencia del anterior, la imagen es contenida por el enlace.
+3)Idem
+4)Parrafo que contiene imagen que redirige a google y además otro enlace que también lo hace. 
+
+3-C
+
+1) Muestra una lista desordenada con tres items
+2) Muestra una lista ordenada (el elemento cuenta con la secuencia de items) con tres items
+3) Separa los tres ítems en tres listas diferentes. Donde el segundo y tercer ítem cuentan con el valor (value={numero} indica a la lista que a partir de "numero" comienzan los elementos ordenados y se incrementan secuencialmente, los muestra en pantalla)
+4) Muestra bloque de cita con un párrafo partido por dos saltos de línea (se muestran 3 "renglones")
+
+3-D
+
+Muestra una Tabla con 300px de ancho, 1px de borde.
+Difieren en el encabezado, donde una usa apropiadamente el header (<th>...</th>) y la otra celdas con bloques div alineados en centro.
+
+3-E
+
+Muestra una tabla con 200px de ancho. La tabla de la izquierda cuenta con una leyenda gracias al tag de <caption> dentro de una fila. Mientras que la derecha intenta lograr lo mismo especificando la cantidad de columnas (3) que debe ocupar la celda <td>, alineando el título en el centro dentro de un bloque div. 
+
+3-F
+Muestra una tabla con 200px de ancho, difieren en que la tabla izquierda muestra una celda que ocupa dos filas y la derecha muestra una celda que ocupa dos columnas.
+
+3-G
+Muestra una tabla de 200px de ancho, que difieren en la cantidad
+de columnas que ocupa la primer celda para el título, en el estilado de los bordes de la tabla.
+
+3-H
+Todos los formularios difieren en nombre, acción y método http (excepto el 1 y 3 que ambos son POST). El primero y tercero son similares visualmente, difieren en tipo de acción que realiza el botón (submit vs reset) y el valor predefinido en los input de usuario y clave (XXX vs "").
+Luego el formulario 2 no cuenta con el elemento fieldset que envuelve los inputs de usuario y clave, pero si cuenta con los elementos label y salto de línea. 
+
+3-I
+El botón 1 cuenta con una imagen dentro del mismo, difieren las dimensiones y cuetna con un salto de línea para ubicar le texto CLICK AQUI, en adición de que el botón 2 es un elemento del tipo input.
+
+3-J
+Muestra dos input del tipo radio (pequeño circulo clickeable)
+Difieren en el nombre del input. En el primer caso referencian al mismo input por lo que el valor se sobreescribe cuando se cambia de opción, y en el segundo caso ambas opciones pueden ser consideradas como elegibles. 
+
+3-K
+Difieren en el atributo "multiple" que convierte una lista de opciones en un dropdown. En particular tiene un valor equívoco para la segunda lista ya que se espera que sea boolean y recibe "multiple", por esto se muestra una lista expandida de opciones agrupadas

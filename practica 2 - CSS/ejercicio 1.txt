@@ -1,0 +1,84 @@
+1. ¿ Qué es CSS y para qué se usa?
+
+CSS Son las siglas de Cascade Style Sheet, permite controlar la apariencia de una página web (en HTML).
+Describe cómo los elementos dispuestos en la página son presentados al usuario. Permite especificar estilos tales como tamaño de fuente, color, espaciado, entre otros.
+
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan?
+
+CSS Funciona a base de reglas que serían declaraciones sobre el estilo de uno o mas elementos del documento. Las reglas pueden ser compuestas por una o mas reglas y cáda una de estas se divide en dos partes: selector y declaración.
+
+Donde selector especifica el elemento que va a ser afectado por la declaración y Declaración contiene la lista de propiedades a aplicar con sus respectivos valores.
+
+3. ¿ Cuáles son las tres formas de dar estilo a un documento?
+
+- Directamente en el elemento (inline CSS) a través del atributo style.
+
+- Agrupar reglas en un archivo externo de extensión .CSS y vincularlas en el head de la pagina a través del elemento <link rel="stylesheet" type="text/css" href="...*.css">
+
+- Utilizando el elemento <style> dentro de el elemento <head> y especificando las reglas en el mismo.
+
+4. ¿ Cuáles son los distintos tipos de selectores más utilizados?
+
+Se utilizan para encontrar un elemento en el documento que pretendemos estilar.
+
+- Elemento: Selecciona el elemento basado en el tipo de elemento. Ej: p {...} aplica las reglas en ... para todos los elementos p (párrafo)
+
+- ID: Selecciona el elemento que contenga el atributo id. Ej: #login-button {...} aplica las reglas en ... para el elemento que tenga el atributo id="login-button"
+
+- Clase: Selecciona elementos que pertenezcan a una clase a través del atributo class="...". Ej: .copy {...} aplica las reglas ... a todos los elementos que tengan el atributo class="copy"
+
+- Universal: * aplica a todos los elementos. Ej * {...} aplica ... a todos los elementos.
+
+- Grupo: Selecciona los elementos listados por comas. Ej h1, h2, p {...} aplica las reglas ... a los elementos que sean del tipo h1, h2 y p.
+
+5. ¿ Qué es una pseudo-clase? Cuáles son las más utilizadas aplicadas a vínculos?
+
+Una pseudo clase es usada para definir estados especiales de un elemento.
+Sintaxis:
+  selector:pseudo-class {...}
+
+  Un ejemplo de las mas utilizadas a los vínculos podría ser la pseudoclase "hover", que indica el estado en que el cursor se encuentra sobre el elemento.
+
+  a:hover {
+    cursor: pointer;
+    color: blue;
+  }
+
+  luego las mas utilizadas son:
+
+  link: indican el estado de un enlace que aún no fue visitado
+  visited: indican el estado de un enlace que ha sido visitado
+  active: indican el estado en que el elemento se encuentra activo
+
+6. ¿ Qué es la herencia?
+
+La herencia ocurre cuando algunos valores de las propiedades CSS que se han establecido para los elementos padre son adquiridos (heredados) por los elementos hijos. 
+
+Ej:
+
+  div {
+    font-weight: bold;
+  }
+
+  p {
+    color: red;
+  }
+
+  Si un elemento p aparece dentro del div éste hereda la fuente del tipo negrita además de tener color rojo:
+  <div>
+    <p>Este es un parrafo que hereda negrita</p>
+  </div>
+
+7. ¿En qué consiste el proceso denominado cascada?
+
+En un primer nivel de simplicidad, la cascada en las hojas de estilo significa que el orden de las reglas importa en CSS: cuando dos reglas tienen la misma especificidad, se aplica la que aparece en último lugar en el CSS.
+
+  h1 { 
+      color: red; 
+  }
+  h1 { 
+      color: blue; 
+  }
+  
+  el header tendrá color azul (blue).
+  

@@ -1,0 +1,15 @@
+
+- Código 1 (izquierda):
+
+Muestra párrafo con fuente "arial" o "helvética" como segunda opción. Tamaño 10 píxeles y color negro. Luego la clase "contenido", sobreescribe el tamaño de fuente con 14px y grosor "negrita" (bold). Luego sobreescribe el estilado del grosor de fuente definido en la clase a través de una regla inline como "normal", devoliendo el grosor inicial del párrafo. Resultando color negro, 14px y fuente arial.
+
+Debajo muestra tabla cuya primer fila contiene una celda con texto "esta es una tabla" de color verde (reglar color:green) gracias al selector universal y una segunda fila cuya única celda contiene un enlace a google. El enlace varía de color para los estados:
+ link (enlace que no ha sido visitado, presionado focuseado u otro estado): gris
+ visitado: azul
+ puntero encima (hover): fucsia
+ activo: rojo.
+
+
+- Código 2:
+
+Muestra misma tabla estructurada, con la diferencia que la clase contenido afecta a todo el body ahora y todos los elementos tienen grosor de fuente negrita. Además no sobreescribe el grosor de fuente para el primer párrafo como en el ejemplo primero. 

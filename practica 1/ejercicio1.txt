@@ -1,0 +1,78 @@
+## 1) Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+    https://www.w3.org/TR/2007/WD-html-design-principles-20071126/
+    HTML Es el lenguaje de formato de documentos para hipertexto o mejor dicho, lenguaje de marcado
+    para elaboración de páginas web. De las siglas HyperText Markup Language.
+    Publicado por la W3C, conocidas las versiones:
+    HTML2 (1990-1995), 3.2, 4, 4.01 (1997 - 1998) y 5.
+    Agregando soporte en cada versión, desde estilados, multimedia,
+    hiperlinks, accesibilidad, entre otros con el objetivo de lograr un estándar de verdadero WWW.
+    (Web World Wide).
+    Su última versión publicada en W3 es la 4.01, pero actualmente conocida la 5. 
+---
+## 2) ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML?
+  # Compatibilidad
+    Soporte contenido existente: Implica garantizar el comportamiento esperado segun lo previsto y los requisitos deben estar especificados. Debe ser posible (lo cual no implica
+    obligatorio) procesar documentos HTML y HTML5 con resultados compatibles
+
+    - Degradar con gracia: Implica diseñar el contenido HTML de manera que los usuarios
+      mas antiguos o menos capaces puedan utilizar las funcionalidades de igual manera.
+      (se suele ver en los lenguajes de programacion, diferencia de versiones, o herramientas
+      poco conocidas). Esto no implica tener una cobertura del 100% a los casos mencionados, pero se tiene foco en los NAVEGADORES, convencionales, web, moviles, terminales de texto, reglas CSS, atributos obsoletos etc.
+
+    - No reinventar la rueda: no rediseñar tecnologías que funcionan y estan probadas
+      en la comunidad. Es preferible adoptar dicha practica.
+
+    - Evolución, no revolucion: Es preferible evolucionar un diseño a deshacerlo y rehacerlo.
+      Así los demas autores no tienen que aprender de cero algo que ya conocían y se extiende la vida del contenido.
+
+  # Utilidad
+    - Resolver problemas reales: evitar arquitecturas abstractas que no resuelven problemas de
+      la web actual. Es decir buscar siempre soluciones pragmáticas.
+
+    - Prioridad electoral: Se debe dar mas peso a los costos o dificultades para el usuario
+      que para los autores. En caso de los implementadores se debe dar mas peso 
+
+    - Separacion de intereses (SOC): Se debe permitir la separación de contenidos y
+      presentación. Evitar codificación semantica y profunda, es preferible un equilibrio entre utilidad práctica y expresividad semántica (siempre y cuando sea posible).
+      por ejemplo, un elemento "article" puede interpretarse como artículo individual pero no da detalles de cómo se muestra, puede ser formateado con multiples columnas, imagenes y otros artículos inclusive. El elemento "b" es bien claro.
+
+    - Consistencia DOM: Disminuir las discrepancias que hay en las interpretaciones, ya sea
+      por compatibilidad u otro motivo.
+
+  # Interoperabilidad
+    - Comportamiento bien definido: Por ejemplo, crear interfaces donde sea claro 
+      comportamiento de dicha sección para todos los usuarios.
+
+    - Evitar complejidad: Es lo que vuelve algo interoperable, fácil de implementar.
+
+    - Manejo de errores: Contemplar las fallas y recuperación de errores para que los usuarios
+      no se hallen expuestos a los mismos.
+
+  # Acceso universal
+    - Independencia de medios: Las características deben funcionar en diferentes plataformas
+      y medios. Por ejemplo, las funciones interactivas no deben omitirse simplemente porque no puedan presentarse en un documento impreso. 
+
+    - Idiomas del mundo: Habilitar las publicaciones en los diversos idiomas. 
+
+    - Accesibilidad:  Las características deben ser diseñadas para ser accesibles a usuarios
+    con menores capacidades. Es escencial, se deben proponer mecanismos alternativos. Por ejemplo hacer uso de los textos descriptivos de las imágenes para usuarios invidentes. 
+
+## 3) En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y obsoleto?
+  # Desaprobado (deprecado):
+    - Un elemento o atributo desaprobado es aquel que ha quedado anticuado por la presencia de estructuras nuevas. En el manual de referencia en los lugares apropiados son marcados como desaprobados. Estos se deben seguir usando con propósitos de mantener ciertas compatibilidades.
+  # Obsoleto:
+    - Un elemento o atributo obsoleto es aquél para el cual no hay garantía de soporte por parte de un agente de usuario. Los elementos obsoletos han dejado de estar definidos en la especificación
+
+## 4) Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+  - El DTD es la declaración del tipo de documento o DOCTYPE. Que asocia un documento particular con una definición del tipo de documento. En HTML 4.01 existen los tipos Estricto, Transicional y Con marcos.
+  - Estricto: Incluye todos los elementos y atributos que no han sido desaprobados o que no aparecen en documentos con marcos.
+
+  - Transicional: Incluye todos lo que el Estricto más los elementos y atributos Desaprobados (en general relacionados con la presentación visual).
+
+  - Con Marcos: Incluye lo que el Transicional, más los marcos. 
+
+## 5) Qué son los metadatos y cómo se especifican en HTML?
+  - En HTML se pueden especificar los metadatos, información sobre un documento además del contenido propio. Los metadatos son especificados a través del elemento <META ...> asignandole valores a sus propiedades. Se especifican en general en dos pasos:
+    1) Declarar sus propiedades (name, content, scheme, etc) y valores desde el documento o vinculando los minsmos a través de un link.
+    2) Asignar el perfil a través del atributo "profile" en el elemento <HEAD ...>. 
+

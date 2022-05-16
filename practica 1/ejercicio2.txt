@@ -1,0 +1,80 @@
+## Ejercicio 2: Analizar los siguientes segmentos de código indicando en qué sección del documento HTML se colocan, cuál es el efecto que producen y señalar cada uno de los elementos, etiquetas, y atributos (nombre y valor), aclarando si es obligatorio
+
+a) Comentario HTML, en cualquier sección. No produce efecto visual en el documento. No es obligatorio
+
+b) Elemento div, se colocan generalmente dentro del tag body, nav, section, header y footer para generar bloques de contenido. No por esto no es posible ubicarlos en otras secciones. Produce un contenedor.
+Atributo ID con valor "bloque1", que asigna dicho identificador al elemento en todo el documento. No es obligatorio
+
+c) Elemento img, su uso es muy contextual y generalmente suele estar ubicado dentro de listas, grillas, portadas. Produce una imagen. 
+Configurada por los siguientes atributos:
+  - id --> Identifica el nodo en el documento. No es obligatorio
+
+  - src --> Indica la fuente del recurso, es decir desde donde se obtiene la imagen.
+
+  - alt --> Describe el contenido de la imagen de manera textual para situaciones en las que la imagen no puede ser visualizada. 
+
+  - width --> Indica el ancho de imagen en píxeles
+
+  - height --> Indica el alto de imagen en píxeles
+
+  - longdesc --> Es la versión extensa del atributo "alt", actualmente obsoleto. 
+
+d) Elemento meta, se colocan dentro del head o cabecera. Se usa para proveer información que no puede ser expresada con otros elementos. Es obligatorio
+Atributos:
+
+  - name --> especifica el nombre y tipo de la metadata (author, description, robot, description, keywords, referrer, etc)
+  - lang --> especifica el lenguaje nativo en que es escrito el documento. 
+  - content --> Valor que describe contextualmente el atributo name o http-equiv
+  - hhtp-equiv --> Indica la directiva pragma
+
+e) Elemento hipervínculo, produce un enlace hacia otro contenido o recurso externo. Se colocan dependiendo del contexto, dentro del cuerpo, encabezado o pie de página. No es obligatorio.
+
+Atributos
+  - href --> Indica mediante URI la ubicación del recurso
+    -  URI:
+    [protocolo][nombre_computadora][ruta_directorios][archivo]
+  
+    Protocolo: también llamado esquema URL, este componente especifica el protocolo que se requiere utilizar para acceder al documento o recurso.
+
+    Nombre de la computadora: el nombre de la computadora (habitualmente un nombre de dominio o una dirección IP) donde el contenido está alojado.
+
+    Ruta de directorios: una secuencia de directorios separados por barras que define la ruta a seguir en la computadora para llegar al archivo.
+
+    Archivo: El nombre del archivo que contiene al recurso.
+
+    ftp://Protocoloalgunservidor.com/algun-recurso.php
+    http://Protocolowww.w3.org/TR/CSS21/
+    telnet://Protocolo127.15.19.11/
+
+  - type --> Indica el tipo de contenido al que redirige, por defecto es "all", pero un ejemplo válido es "text/html"
+
+  - hreflang --> Indica el lenguaje que se espera que utilice el  documento enlazado
+
+  - charset --> OBSOLETO --> La codificacion de caracteres que utiliza el recurso enlazado, actualmente se espera que esto sea especificado (Numb,ASCII, ANSI, UTF-8) en otra parte, por ejemplo en el tag meta. 
+  
+  - rel --> Especifica una lista ordenada de vinculos únicos que indican el significado que el recurso enlazado tiene para el documento actual. 
+  "alternate, author, external, help, prev, next, license"
+
+  <a rel="prev" href="articulo1.html">Leer artículo anterior</a>
+
+  <a rel="next" href="articulo3.html">Leer artículo siguiente</a>
+
+  <a rel="license" href="copyright.html">Copyrights del artículo</a>
+
+  <a rel="alternate" href="version-ingles.html" hreflang="en">Versión en inglés</a>
+
+f) Elemento table, Produce un contenedor para agrupar filas y columnas    (además de otros elementos).
+
+  - table
+    atributos
+    - width --> Provee el ancho de tabla
+    - summary --> Provee resumen del contenido de la tabla
+  - caption --> Provee un título o leyenda para la tabla, la vuelve mas fácil de comprender
+    atributos
+    - align --> OBSOLETO --> Indica donde ubicar el título en relacion con la tabla
+  - table row (tr) --> Representa una fila dentro de la tabla
+  - table header (th) --> Representa una celda de encabezado dentro de la tabla
+    atributos
+    - scope --> Indica un grupo de celdas para las cuales ésta celda brinda información. Ejemplo scope="row" asocia el header con todas las celdas de la misma fila. (puede ser auto, col, rowgroup, ..etc)
+  - td (celda de tabla) --> Representa una celda regular, se los suele ubicar dentro de un <tr> 
+    

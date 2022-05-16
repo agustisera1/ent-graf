@@ -1,0 +1,37 @@
+### Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.
+
+p.quitar {
+  color: red;
+}
+
+*.desarrollo {
+  font-size: 8px;
+}
+
+.importante {
+  font-size: 20px;
+}
+
+<p class="desarrollo">
+  En este primer párrafo trataremos lo siguiente:
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p> ---> Aplica un tamaño de fuente de 8píxeles a través de la clase "desarrollo". Aplica selector universal (no marca diferencia en caso de que estuviese ausente)
+
+<p class="quitar">
+Este párrafo debe ser quitado de la obra…
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p> ---> Aplica el color de texto rojo (red) a través del selector "p" y la clase "quitar". 
+
+<p >
+En este otro párrafo trataremos otro tema:<br />
+xxxxxxxxxxxxxxxxxxxxxxxxx
+</p> ---> No aplica estilos, sigue los estilados default para el párrafo.
+
+<p class="importante">
+Y este es el párrafo más importante de la obra…
+<br />xxxxxxxxxxxxxxxxxxxxxxxxx
+</p> --> Aplica un tamaño de fuente de 20px a través de la clase "importante". No aplica color rojo ya no basta con solo ser un elemento parrafo. Solo es válido para párrafos que además son de la clase quitar.
+
+<h1 class="quitar">Este encabezado también debe ser quitado de la obra</h1> ---> No aplica estilados, la clase quitar solo es válida para los párrafos.
+
+<p class="quitar importante">Se pueden aplicar varias clases a la vez</p> ---> Aplica la clase "quitar" (da color rojo al texto), seguido de aplicar la clase "importante", que asigna un tamaño de fuente de 20px al párrafo.
