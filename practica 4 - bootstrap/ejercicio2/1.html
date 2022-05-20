@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Ejercicio 2 - Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"></head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</head>
+
+  <!--Utilizar la grilla de Bootstrap para crear un div de clase
+  container, que contenga dos filas. Para todas las resoluciones,
+  excepto para sm, la primera fila deberá haber una columna que
+  ocupe el 100% del ancho, y en la segunda deberá haber 2 columnas
+  que ocupen el 50% del ancho cada una. Para sm y resoluciones
+  más pequeñas, deberán haber 3 filas con 1 columna que ocupe
+  el 100% del ancho en cada una:-->
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col bg-success">Columna 1</div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2"> <!-- usar row-cols-sm-1 y row-cols-xs-1 no funciona !-->
+        <div class="col bg-danger">Columna 2</div>
+        <div class="col bg-warning">Columna 3</div>
+      </div>
+  </body>
+</html>
