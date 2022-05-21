@@ -1,0 +1,54 @@
+.body {
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+}
+
+.nv {
+  background-color: #A580A6;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.sb {
+  background-color: #F2D7D0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.bm {
+  background-color: #9C8D99;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.ba {
+  background-color: #759CBF;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.vd {
+  background-color: #68CC82;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sb {
+    height: 8vh;
+  }
+}
