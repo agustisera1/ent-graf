@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <title>Formulario Ejercicio 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulario de contacto</h1>
+      <form>
+        <div class="mb-3">
+          <label for="nombre-completo" class="form-label">Nombre completo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre-completo"
+            placeholder="Juan Carlos Gutierrez"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="jcarlosgut@gmail.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="tel" class="form-label">Teléfono</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="tel"
+            placeholder="(+549)-3407-XXXXXX"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="asunto" class="form-label">Asunto</label>
+          <input
+            type="text"
+            class="form-control"
+            id="asunto"
+            placeholder="Opinion mejoras sobre la última resolución..."
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cuerpo" class="form-label">Cuerpo</label>
+          <textarea class="form-control" id="cuerpo" rows="6"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
