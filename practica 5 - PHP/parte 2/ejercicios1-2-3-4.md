@@ -13,8 +13,7 @@ Si, son equivalentes. El último elemento del arreglo en el primer caso se toma 
 - b: 11
 
 ## Ejercicio 4
-`
-<?php
+```<?php
   function comprobar_nombre_usuario($nombre_usuario) { 
     if (strlen($nombre_usuario)<3 || strlen($nombre_usuario)>20) {
         echo $nombre_usuario . " no es válido<br>"; return false;
@@ -38,7 +37,7 @@ Si, son equivalentes. El último elemento del arreglo en el primer caso se toma 
   comprobar_nombre_usuario('estestringtienemasdeveintecaracteres');
   comprobar_nombre_usuario('***qwe2||');
 ?>
-`
+
 ### Salidas:
 - agustisera1 es válido
 - a no es válido
