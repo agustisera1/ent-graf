@@ -22,7 +22,7 @@
               $ciudad = $queryRow['ciudad'];
               $habitantes = $queryRow['habitantes'];
               $superficie = $queryRow['superficie'];
-              ($queryRow['tieneMetro'] == '1') ? $tieneMetro = 'Si' : 'No';
+              ($queryRow['tieneMetro'] == '1') ? $tieneMetro = 'Si' : $tieneMetro = 'No';
               echo "
               <tr style='text-align: center;'>
                 <td>$pais</td>
@@ -53,12 +53,12 @@
     $nombre = $_POST['nombre'];
     $superficie = $_POST['superficie'];
     $habitantes = $_POST['habitantes'];
-    ($_POST['metro'] == true) ? $metro = '1' : $metro = '0';
+    $metro = $_POST['metro'];
 
     $con = mysqli_connect('localhost', 'root', '', 'capitales') or die('Error al conectar con la base de datos');
     if ($con) {
-      $query = "INSERT INTO `ciudades` ('ciudad', 'pais', 'habitantes', 'superficie', 'tieneMetro') VALUES ('$nombre', '$pais', '$habitantes', '$superficie', '$metro')";
-      $queryResult = mysqli_query($con, $query) or die ('Error al ejecutar query de insercion');
+      $query = "INSERT INTO `ciudades` (`id`, `ciudad`, `pais`, `habitantes`, `superficie`, `tieneMetro`) VALUES (NULL, '$nombre', '$pais', '$habitantes', '$superficie', '$metro');";
+      $queryResult = mysqli_query($con, $query);
 
       if ($queryResult) echo 'Ciudad agregada.';
       else echo 'No se ha podido agregar la ciudad';
@@ -109,7 +109,7 @@
           </tr>
           <tr>
             <td><span>Tiene metro? (S/N)</span></td>
-            <td>Si<input name="metro" type="radio" />No<input name="metro" type="radio" /><td>
+            <td>Si<input name="metro" type="radio" value="1" />No<input name="metro" type="radio" value="0" /><td>
           </tr>
           <tr>
             <td></td><td><button name="agregarCiudad" type="submit">Agregar</button></td>
