@@ -70,7 +70,71 @@
 ?>
 
 <?php
-// Modificar
+  function modificarCiudad () {
+    if (isset($_POST['modificarCiudad']) && isset($_POST['id'])) {
+      $id = $_POST['id'];
+      $con = mysqli_connect('localhost', 'root', '', 'capitales') or die('Error al conectar con la base de datos');
+      $query = "SELECT * from `ciudades` WHERE id=$id";
+      $fila = mysqli_query($con, $query) -> fetch_array();
+
+
+      ($_POST['nombre'] !== '' && $_POST['nombre'] !== $fila['ciudad']) ? $ciudad = $_POST['nombre'] : $ciudad = $fila['ciudad'];
+      ($_POST['pais'] !== '' && $_POST['pais'] !== $fila['pais']) ? $pais = $_POST['pais'] : $pais = $fila['pais'];
+      ($_POST['habitantes'] !== '' && $_POST['habitantes'] !== $fila['habitantes']) ? $habitantes = $_POST['habitantes'] : $habitantes = $fila['habitantes'];
+      ($_POST['superficie'] !== '' && $_POST['superficie'] !== $fila['superficie']) ? $superficie = $_POST['superficie'] : $superficie = $fila['superficie'];
+
+      $updateQuery = "UPDATE `ciudades` SET pais='$pais',habitantes='$habitantes',superficie='$superficie',ciudad='$ciudad' WHERE id=$id";
+      echo "$updateQuery <br />";
+      $updateRes = mysqli_query($con, $updateQuery);
+
+      if ($updateRes) echo "Modificación exitosa";
+      else echo "Hubo un error al actualizar la ciudad";
+
+      echo "<br />";
+      mysqli_close($con);
+    }
+  }
+  
+  function crearCampos() {
+    $query = "SELECT * FROM `ciudades`";
+    $con = mysqli_connect('localhost', 'root', '', 'capitales') or die('Error al conectar con la base de datos');
+    if ($con) {
+      $queryResult = mysqli_query($con, $query) or die ('Error al ejecutar query');
+      if ($queryResult && $queryResult -> num_rows >= 1) {
+        echo "<select name='id'>";
+        while($queryRow = mysqli_fetch_array($queryResult)) {
+          $id = $queryRow['id'];
+          $pais = $queryRow['pais'];
+          $ciudad = $queryRow['ciudad'];
+          echo "
+          <option value=$id>
+            $ciudad ($pais)
+          </option>
+          ";
+        };
+        echo "</select>";
+        echo "
+        <tr>
+          <td><span>Nombre Pais</span></td><td><input name='pais' type='text' /><td>
+        </tr>
+        <tr>
+          <td><span>Nombre Ciudad</span></td><td><input name='nombre' type='text' /><td>
+        </tr>
+        <tr>
+          <td><span>Cantidad de habitantes</span></td><td><input name='habitantes' type='number' /><td>
+        </tr>
+        <tr>
+          <td><span>Superficie</span></td><td><input name='superficie' type='text' /><td>
+        </tr>
+        <tr>
+          <td><span>Tiene metro? (S/N)</span></td>
+          <td>Si<input name='metro' type='radio' value='1' />No<input name='metro' type='radio' value='0' /><td>
+        </tr>
+        ";
+      } else echo "No hay ciudades para modificar";
+      mysqli_close($con);
+    } else echo "Error al cargar las ciudades";
+  }
 ?>
 
 <html>
@@ -117,6 +181,18 @@
           <table>
       </form>
       <?php agregarCiudad()?>
+    </div>
+    <hr />
+
+    <div>
+      <h1>Modificar ciudad</h1>
+      <form method="POST">
+        <table>
+          <?php crearCampos()?>
+          <tr> <td></td><td><button name='modificarCiudad' type='submit'>Modificar</button></td></tr>
+        </table>
+      </form>
+      <?php modificarCiudad()?>
     </div>
     <hr />
 
