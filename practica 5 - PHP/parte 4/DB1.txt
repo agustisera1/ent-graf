@@ -1,0 +1,62 @@
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función
+
+- mysqli_connect()
+
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:
+
+- $hostname, $username, $password
+
+Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función
+
+- mysqli_select_db()
+
+Esta función debe pasar como parámetro
+
+- $mysql, $database // $mysql es el link de la conexión devuelto por $mysqli_connect 
+
+La función mysqli_query () se utiliza para
+
+- Ejecutar una query en particular sobre una base de datos.
+
+y requiere como parámetros
+
+- $mysql, $query
+
+La cláusula or die() se utiliza para
+
+- Capturar un error 
+
+y la función mysqli_error () se puede usar para
+
+- Devolver el último mensaje de error para la llamada mas reciente a la función
+  mysqli.
+
+Si la función mysqli_query() es exitosa, el conjunto resultante retornado
+se almacena en una variable, por ejemplo $vResult, y a continuación se puede
+ejecutar el siguiente código (explicarlo):
+
+<?php
+  while ($fila = mysqli_fetch_array($vResultado))
+  {
+    ?>
+    <tr>
+    <td><?php echo ($fila[0]); ?></td>
+    <td><?php echo ($fila[1]); ?></td>
+    <td><?php echo ($fila[2']); ?></td>
+    </tr>
+    <tr>
+    <td colspan="5">
+    <?php
+  }
+  mysqli_free_result($vResultado);
+  mysqli_close($link);
+?>
+
+Donde la variable $vResultado es convertida en un array a través de 
+mysqli_fetch_array() y el mismo es iterado por la sentencia while, 
+asignando en cada iteración a la variable $fila, el valor del elemento
+actual del arreglo. Luego para cada valor de fila se muestra una
+fila de tabla (<tr>), cuyas celdas son completadas con los datos de las columnas 0,1 y 2
+de la misma. La sentencia while continúa hasta que no pueda
+asignar mas elementos a la variable $fila. Finalizado el while, libera
+la memoria asociada a $vResultado y cierra la conexión con la base de datos. 

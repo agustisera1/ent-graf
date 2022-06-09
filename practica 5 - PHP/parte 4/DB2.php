@@ -42,12 +42,8 @@
 ?>
 
 <?php
-// Eliminar
-?>
-
-<?php
 // Agregar
- function agregarCiudad () {
+ function agregarCiudad() {
   if (isset($_POST['agregarCiudad'])) {
     $pais = $_POST['pais'];
     $nombre = $_POST['nombre'];
@@ -70,7 +66,8 @@
 ?>
 
 <?php
-  function modificarCiudad () {
+  // Modificar
+  function modificarCiudad() {
     if (isset($_POST['modificarCiudad']) && isset($_POST['id'])) {
       $id = $_POST['id'];
       $con = mysqli_connect('localhost', 'root', '', 'capitales') or die('Error al conectar con la base de datos');
@@ -137,6 +134,51 @@
   }
 ?>
 
+<?php
+// Eliminar
+  function crearSelectorCiudad() {
+    $query = "SELECT * FROM `ciudades`";
+    $con = mysqli_connect('localhost', 'root', '', 'capitales') or die('Error al conectar con la base de datos');
+    if ($con) {
+      $queryResult = mysqli_query($con, $query) or die ('Error al ejecutar query');
+      if ($queryResult && $queryResult -> num_rows >= 1) {
+        echo "<select name='id'>";
+        while($queryRow = mysqli_fetch_array($queryResult)) {
+          $id = $queryRow['id'];
+          $pais = $queryRow['pais'];
+          $ciudad = $queryRow['ciudad'];
+          echo "
+          <option value=$id>
+            $ciudad ($pais)
+          </option>
+          ";
+        };
+        echo "</select>";
+      } else echo "No hay ciudades para eliminar";
+      mysqli_close($con);
+    } else echo "Error al cargar las ciudades";
+  }
+
+  function eliminarCiudad() {
+    if (isset($_POST['eliminarCiudad'])) {
+      $id = $_POST['id']; 
+      $con = mysqli_connect('localhost', 'root', '', 'capitales') or die('Error al conectar con la base de datos');
+      if ($con) {
+        $query = "DELETE FROM ciudades WHERE id='$id';";
+        $queryResult = mysqli_query($con, $query);
+  
+        if ($queryResult) {
+          unset($_POST);
+          echo 'Ciudad eliminada';
+        }
+        else echo 'No se ha podido eliminar la ciudad';
+  
+        mysqli_close($con);
+      }
+    }
+  }
+?>
+
 <html>
 <head>
     <title>Practica Conexión a base de datos</title>
@@ -193,6 +235,18 @@
         </table>
       </form>
       <?php modificarCiudad()?>
+    </div>
+    <hr />
+
+    <div>
+      <h1>Eliminar ciudad</h1>
+      <form method="POST">
+        <div>
+          <?php crearSelectorCiudad()?>
+          <tr> <td></td><td><button name='eliminarCiudad' type='submit'>Confirmar</button></td></tr>
+        </div>
+      </form>
+      <?php eliminarCiudad()?>
     </div>
     <hr />
 
